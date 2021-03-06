@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MovieBroswer</string>
+    <string  name="login">Login</string>
+    <string name="check_internet_connection">Please check your internet settings</string>
+    <string name="movie_refresh_worker_notification_channel_id">MOVIE_REFRESH_WORKER</string>
+    <string name="notification_title">MOVIE BROWSER</string>
+</resources>

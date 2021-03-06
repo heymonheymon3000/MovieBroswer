@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "677125236427",
+    "project_id": "moviebrowser-12593",
+    "storage_bucket": "moviebrowser-12593.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:677125236427:android:cc678b6874a758e43edd4e",
+        "android_client_info": {
+          "package_name": "com.example.moviebrowser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "677125236427-kap1ril0mor7ink8l74mr180o66drqfi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.moviebrowser",
+            "certificate_hash": "abc554a1440b26fd0ff136ac48d42f4126855806"
+          }
+        },
+        {
+          "client_id": "677125236427-rpkrf3u0g7e99ki6fp6op08sns6v5kk7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwOvTkreIZLr4wHc_W-TOT3JZoeAhpP4s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "677125236427-rpkrf3u0g7e99ki6fp6op08sns6v5kk7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
