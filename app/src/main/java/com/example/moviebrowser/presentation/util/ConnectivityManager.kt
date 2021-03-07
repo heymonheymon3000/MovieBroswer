@@ -13,7 +13,7 @@ class ConnectivityManager
 constructor(application: Application) {
     private val connectionLiveData = ConnectionLiveData(application)
 
-    private val _isNetworkAvailable: MutableLiveData<Boolean> = MutableLiveData(false)
+    private val _isNetworkAvailable: MutableLiveData<Boolean> = MutableLiveData(true)
     val isNetworkAvailable: LiveData<Boolean>
         get() = _isNetworkAvailable
 
