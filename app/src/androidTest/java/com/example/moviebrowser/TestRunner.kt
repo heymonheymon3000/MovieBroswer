@@ -1,4 +1,4 @@
-package com.example.moviebrowser.util
+package com.example.moviebrowser
 
 import android.app.Application
 import android.content.Context

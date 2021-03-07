@@ -1,6 +1,6 @@
 package com.example.moviebrowser.splash
 
-import androidx.test.core.app.launchActivity
+import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.IdlingRegistry
 import com.example.moviebrowser.R
 import com.example.moviebrowser.presentation.ui.splash.SplashActivity
@@ -26,7 +26,7 @@ class SplashFeature {
     @Before
     fun init() {
         hiltRule.inject()
-        val scenario = launchActivity<SplashActivity>()
+        ActivityScenario.launch(SplashActivity::class.java)
     }
 
     @Test
