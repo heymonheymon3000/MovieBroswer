@@ -7,6 +7,7 @@ import com.example.moviebrowser.util.EspressoIdlingResourceRule
 import com.schibsted.spain.barista.assertion.BaristaVisibilityAssertions.assertDisplayed
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
@@ -19,10 +20,14 @@ class LoginFeature {
     @get:Rule(order = 1)
     val espressoIdlingResoureRule = EspressoIdlingResourceRule()
 
+    @Before
+    fun init() {
+        hiltRule.inject()
+        ActivityScenario.launch(SplashActivity::class.java)
+    }
+
     @Test
     fun displayLoginScreen() {
-        ActivityScenario.launch(SplashActivity::class.java)
-
         assertDisplayed(R.id.layoutLogin)
         assertDisplayed(R.id.splash_image)
         assertDisplayed(R.id.google_button)

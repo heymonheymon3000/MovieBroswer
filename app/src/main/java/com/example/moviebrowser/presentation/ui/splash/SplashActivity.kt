@@ -50,6 +50,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun subscribeObservers() {
+        EspressoIdlingResource.increment()
         connectivityManager.isNetworkAvailable.observe(this, Observer { isNetworkAvailable ->
             if(isNetworkAvailable) {
                 noInternetText.visibility = INVISIBLE
@@ -61,18 +62,16 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun launchSignInFlow() {
-        EspressoIdlingResource.increment()
-
         CoroutineScope(Main).launch {
             delay(1000L)
             startIntentForResult()
-            EspressoIdlingResource.decrement()
         }
     }
 
     private fun startIntentForResult() {
         val intent = createIntent()
         startForResult.launch(intent)
+        EspressoIdlingResource.decrement()
     }
 
     private fun createIntent(): Intent {
