@@ -7,10 +7,8 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.moviebrowser.presentation.ui.UICommunicationListener
-import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
-@AndroidEntryPoint
 abstract class BaseMovieFragment
 constructor(
     @LayoutRes
@@ -37,12 +35,12 @@ constructor(
 //        )
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        try{
-            uiCommunicationListener = context as UICommunicationListener
-        } catch(e: ClassCastException){
-            Timber.e("$context must implement UICommunicationListener" )
-        }
-    }
+//    override fun onAttach(context: Context) {
+//        super.onAttach(context)
+//        try{
+//            uiCommunicationListener = context as UICommunicationListener
+//        } catch(e: ClassCastException){
+//            Timber.e("$context must implement UICommunicationListener" )
+//        }
+//    }
 }

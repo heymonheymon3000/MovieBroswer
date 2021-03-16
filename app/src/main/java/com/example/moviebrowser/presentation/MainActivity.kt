@@ -1,6 +1,5 @@
 package com.example.moviebrowser.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.moviebrowser.R
 import com.example.moviebrowser.fragments.movie.MovieFragmentFactory
@@ -9,6 +8,7 @@ import com.firebase.ui.auth.AuthUI
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity() {
 
     @Inject
