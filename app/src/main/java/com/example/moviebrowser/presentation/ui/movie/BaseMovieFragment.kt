@@ -6,7 +6,9 @@ import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.moviebrowser.presentation.ui.UICommunicationListener
+import com.example.moviebrowser.presentation.ui.movie.viewmodel.MovieViewModel
 import timber.log.Timber
 
 abstract class BaseMovieFragment
@@ -17,6 +19,8 @@ constructor(
 
 
     lateinit var uiCommunicationListener: UICommunicationListener
+
+    val viewModel: MovieViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

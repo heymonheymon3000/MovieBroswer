@@ -4,6 +4,7 @@ import android.graphics.Rect
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -119,24 +120,24 @@ constructor(private val requestOptions: RequestOptions): BaseMovieFragment(R.lay
 
     private fun subscribeObservers(){
 
-//        viewModel.viewState.observe(viewLifecycleOwner, Observer{ viewState ->
-//            if(viewState != null){
-//                recyclerAdapter.apply {
-//                    viewState.blogFields.blogList?.let {
-//                        preloadGlideImages(
-//                            requestManager = requestManager as RequestManager,
-//                            list = it
-//                        )
-//                    }
-//
-//                    submitList(
-//                        blogList = viewState.blogFields.blogList,
-//                        isQueryExhausted = viewState.blogFields.isQueryExhausted?: true
-//                    )
-//                }
-//
-//            }
-//        })
+        viewModel.viewState.observe(viewLifecycleOwner, Observer{ viewState ->
+            if(viewState != null){
+                recyclerAdapter.apply {
+                    viewState.movieFields.movieList?.let {
+                        preloadGlideImages(
+                            requestManager = requestManager as RequestManager,
+                            list = it
+                        )
+                    }
+
+                    submitList(
+                            movieList = viewState.movieFields.movieList,
+                            isQueryExhausted = viewState.movieFields.isQueryExhausted?: true
+                    )
+                }
+
+            }
+        })
 
 //        viewModel.numActiveJobs.observe(viewLifecycleOwner, Observer { jobCounter ->
 //            uiCommunicationListener.displayProgressBar(viewModel.areAnyJobsActive())

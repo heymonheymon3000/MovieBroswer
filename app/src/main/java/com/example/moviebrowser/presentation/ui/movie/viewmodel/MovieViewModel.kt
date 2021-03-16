@@ -1,16 +1,23 @@
 package com.example.moviebrowser.presentation.ui.movie.viewmodel
 
+import androidx.lifecycle.SavedStateHandle
 import com.example.moviebrowser.presentation.ui.BaseViewModel
 import com.example.moviebrowser.presentation.ui.movie.state.MovieStateEvent.MovieSearchEvent
 import com.example.moviebrowser.presentation.ui.movie.state.MovieViewState
 import com.example.moviebrowser.presentation.util.*
 import com.example.moviebrowser.presentation.util.ErrorHandling.Companion.INVALID_STATE_EVENT
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
-class MovieViewModel :
-        BaseViewModel<MovieViewState>()
+@HiltViewModel
+class MovieViewModel
+@Inject
+constructor(
+        private val savedStateHandle: SavedStateHandle
+): BaseViewModel<MovieViewState>()
 {
     @FlowPreview
     override fun handleNewData(data: MovieViewState) {
