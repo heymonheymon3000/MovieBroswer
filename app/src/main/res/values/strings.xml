@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">MovieBroswer</string>
-    <string  name="login">Login</string>
+    <string name="login">Login</string>
     <string name="check_internet_connection">Please check your internet settings</string>
     <string name="movie_refresh_worker_notification_channel_id">MOVIE_REFRESH_WORKER</string>
     <string name="notification_title">MOVIE BROWSER</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="movie_item">Movie item</string>
+
+    <string name="no_more_results">No more results...</string>
+
 </resources>

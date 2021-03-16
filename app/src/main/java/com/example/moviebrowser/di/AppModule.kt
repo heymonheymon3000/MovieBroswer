@@ -1,6 +1,7 @@
 package com.example.moviebrowser.di
 
 import android.content.Context
+
 import com.example.moviebrowser.presentation.BaseApplication
 import dagger.Module
 import dagger.Provides
@@ -18,4 +19,18 @@ object AppModule {
     fun provideApplication(@ApplicationContext app: Context): BaseApplication {
         return app as BaseApplication
     }
+
+//    @Singleton
+//    @Provides
+//    fun provideRequestOptions(): RequestOptions {
+//        return RequestOptions
+//            .placeholderOf(R.drawable.default_image)
+//            .error(R.drawable.default_image)
+//    }
+//
+//    @Singleton
+//    @Provides
+//    fun provideGlideInstance(app: BaseApplication, requestOptions: RequestOptions): RequestManager {
+//        return Glide.with(app).setDefaultRequestOptions(requestOptions)
+//    }
 }

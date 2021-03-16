@@ -1,8 +1,10 @@
 package com.example.moviebrowser.login
 
 import androidx.test.core.app.ActivityScenario
+import androidx.test.espresso.IdlingRegistry
 import com.example.moviebrowser.R
 import com.example.moviebrowser.presentation.ui.splash.SplashActivity
+import com.example.moviebrowser.util.EspressoIdlingResource
 import com.example.moviebrowser.util.EspressoIdlingResourceRule
 import com.schibsted.spain.barista.assertion.BaristaVisibilityAssertions.assertDisplayed
 import dagger.hilt.android.testing.HiltAndroidRule
