@@ -4,12 +4,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.*
+import com.bumptech.glide.RequestManager
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade
 import com.example.moviebrowser.R
 import com.example.moviebrowser.domain.model.Movie
 import com.example.moviebrowser.util.GenericViewHolder
+import kotlinx.android.synthetic.main.layout_movie_list_item.view.*
 import timber.log.Timber
 
 class MovieListAdaptor(
+    private val requestManager: RequestManager,
     private val interaction: Interaction? = null
 ):
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -85,7 +89,8 @@ class MovieListAdaptor(
                         parent,
                         false
                     ),
-                    interaction = interaction
+                    interaction = interaction,
+                    requestManager = requestManager
 
                 )
             }
@@ -97,7 +102,8 @@ class MovieListAdaptor(
                         parent,
                         false
                     ),
-                    interaction = interaction
+                    interaction = interaction,
+                    requestManager = requestManager
                 )
             }
         }
@@ -124,16 +130,16 @@ class MovieListAdaptor(
 
     // Prepare the images that will be displayed in the RecyclerView.
     // This also ensures if the network connection is lost, they will be in the cache
-//    fun preloadGlideImages(
-//        requestManager: RequestManager,
-//        list: List<Movie>
-//    ){
-//        for(movie in list){
-//            requestManager
-//                .load(movie.posterPath)
-//                .preload()
-//        }
-//    }
+    fun preloadGlideImages(
+        requestManager: RequestManager,
+        list: List<Movie>
+    ){
+        for(movie in list){
+            requestManager
+                .load(movie.posterPath)
+                .preload()
+        }
+    }
 
     fun submitList(
         movieList: List<Movie>?,
@@ -153,6 +159,7 @@ class MovieListAdaptor(
     class MovieViewHolder
     constructor(
         itemView: View,
+        val requestManager: RequestManager,
         private val interaction: Interaction?
     ) : RecyclerView.ViewHolder(itemView) {
 
@@ -161,10 +168,10 @@ class MovieListAdaptor(
                 interaction?.onItemSelected(adapterPosition, item)
             }
 
-//            requestManager
-//                .load(item.posterPath)
-//                .transition(withCrossFade())
-//                .into(itemView.movie_thumbnail)
+            requestManager
+                .load(item.posterPath)
+                .transition(withCrossFade())
+                .into(itemView.movie_thumbnail)
         }
     }
 

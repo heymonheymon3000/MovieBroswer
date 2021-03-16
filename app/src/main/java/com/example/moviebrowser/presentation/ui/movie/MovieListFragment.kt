@@ -3,22 +3,25 @@ package com.example.moviebrowser.presentation.ui.movie
 import android.os.Bundle
 import android.view.View
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.bumptech.glide.RequestManager
 import com.example.moviebrowser.R
 import com.example.moviebrowser.domain.model.Movie
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
-class MovieListFragment: BaseMovieFragment(R.layout.fragment_movie_list),
+class MovieListFragment
+constructor(private val requestManager: RequestManager): BaseMovieFragment(R.layout.fragment_movie_list),
     MovieListAdaptor.Interaction,
     SwipeRefreshLayout.OnRefreshListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        if(requestOptions == null) {
-//            Timber.i("requestOptions is NULL")
-//        } else {
-//            Timber.i("requestOptions is NOT NULL")
-//        }
+        if(requestManager == null) {
+            Timber.i("requestOptions is NULL")
+        } else {
+            Timber.i("requestOptions is NOT NULL")
+        }
     }
 
     override fun onItemSelected(position: Int, item: Movie) {

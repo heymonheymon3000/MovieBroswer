@@ -99,7 +99,7 @@ class BottomNavController(
 //            }
 //        }
 
-        return MovieListFragment()
+        return Fragment()
     }
 
     @SuppressLint("RestrictedApi")
