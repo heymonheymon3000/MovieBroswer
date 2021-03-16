@@ -78,13 +78,11 @@ constructor(private val requestOptions: RequestOptions): BaseMovieFragment(R.lay
     }
 
     private fun initRecyclerView(){
-
-        val spanCount = calculateNoOfColumns(
-            requireContext(),
-            dpFromPx(requireContext(), resources.getDimension(R.dimen.default_poster_grid_width))
-        )
-
         movie_list.apply {
+            val spanCount = calculateNoOfColumns(
+                    requireContext(),
+                    dpFromPx(requireContext(), resources.getDimension(R.dimen.default_poster_grid_width))
+            )
             layoutManager = GridLayoutManager(this@MovieListFragment.context, spanCount)
             setHasFixedSize(true)
             addItemDecoration(object : RecyclerView.ItemDecoration() {
@@ -104,18 +102,17 @@ constructor(private val requestOptions: RequestOptions): BaseMovieFragment(R.lay
                 requestManager as RequestManager,
                 this@MovieListFragment
             )
-            addOnScrollListener(object: RecyclerView.OnScrollListener(){
-
-                override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-                    super.onScrollStateChanged(recyclerView, newState)
-                    val layoutManager = recyclerView.layoutManager as GridLayoutManager
-                    val lastPosition = layoutManager.findLastVisibleItemPosition()
+//            addOnScrollListener(object: RecyclerView.OnScrollListener(){
+//                override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+//                    super.onScrollStateChanged(recyclerView, newState)
+//                    val layoutManager = recyclerView.layoutManager as GridLayoutManager
+//                    val lastPosition = layoutManager.findLastVisibleItemPosition()
 //                    if (lastPosition == recyclerAdapter.itemCount.minus(1)) {
 //                        Timber.d("BlogFragment: attempting to load next page...")
 //                        viewModel.nextPage()
 //                    }
-                }
-            })
+//                }
+//            })
             adapter = recyclerAdapter
         }
     }

@@ -6,5 +6,7 @@ object Constants {
     val IMAGE_URL : String = "image.tmdb.org/t/p/original"
 
     val SPLASH_RETURN_CODE = 1001
+    const val PERMISSIONS_REQUEST_READ_STORAGE: Int = 301
+
 
 }

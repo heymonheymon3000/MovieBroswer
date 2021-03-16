@@ -90,6 +90,10 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
 
+    // material dialogs
+    def matieral_dialogs_version = "3.1.0"
+    implementation "com.afollestad.material-dialogs:core:$matieral_dialogs_version"
+
     // Hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-compiler:$hilt_version"

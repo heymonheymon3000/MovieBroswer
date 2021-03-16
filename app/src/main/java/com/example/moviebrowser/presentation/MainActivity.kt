@@ -9,7 +9,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class MainActivity : BaseActivity() {
+class MainActivity: BaseActivity() {
 
     @Inject
     lateinit var fragmentFactory: MovieFragmentFactory
@@ -27,5 +27,18 @@ class MainActivity : BaseActivity() {
     override fun onDestroy() {
         super.onDestroy()
         AuthUI.getInstance().signOut(applicationContext)
+    }
+
+    override fun displayProgressBar(isLoading: Boolean) {
+//        if(bool){
+//            progress_bar.visibility = View.VISIBLE
+//        }
+//        else{
+//            progress_bar.visibility = View.GONE
+//        }
+    }
+
+    override fun expandAppBar() {
+//        setSupportActionBar(tool_bar)
     }
 }
